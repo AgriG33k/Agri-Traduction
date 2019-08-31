@@ -80,3 +80,16 @@ body > section > div > div > div:nth-child(2) > img  {
     color: #878787;
 }
 
+#sticky-footer {
+    flex-shrink: none;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+
+@media (max-width: 992px) { 
+    .sm-block{
+        display: none;
+    }
+ }
