@@ -11,14 +11,14 @@
             }
         ],
         "traductions": [{
-                "traduction": "Je produis <b>[RES] baguettes</b>🥖 par an.",
-                "formula": "X * 25000",
+                "traduction": "Je produis <b>[RES] baguettes</b>🥖 par jour.",
+                "formula": "X * 68",
                 "hashtags": ["CeuxQuiFontLePain", "FierDeMonMetier" ]
             },
             {
-                "traduction": "Je nourris <b>[RES] personnes</b>",
+                "traduction": "Je nourris <b>[RES] personnes</b> 🍴👪",
                 "formula": "X * 6000",
-                "hashtags": []
+                "hashtags": ["CeuxQuiFontLePain", "FierDeMonMetier" ]
             }
         ]
     },
@@ -27,15 +27,19 @@
         "source": "Je moissonne mon blé",
         "parametres": [],
         "traductions": [{
-                "traduction": "La moisson commence, baguettes en cours de récolte !",
+                "traduction": "Baguettes en cours de récolte ! 🚜🥖",
                 "hashtags": ["CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
             },
 			{
-                "traduction": "La moisson commence, c'est l'occasion de venir découvrir notre métier.",
+                "traduction": "<img class='img-trad' src='http://localhost/Agri-Traduction/assets/img/trad-moisson.png'>",
                 "hashtags": [  "CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
             },
-						{
-                "traduction": "La moisson commence, un p'tit tour en moissonneuse-batteuse ça vous dit? ",
+			{
+                "traduction": "C'est la moisson, 🚜 l'occasion de venir découvrir notre métier 👀",
+                "hashtags": [  "CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
+            },
+			{
+                "traduction": "La récolte commence, un p'tit tour en moissonneuse-batteuse ça vous dit? 🚜",
                 "hashtags": [  "CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
             }
         ]
@@ -73,7 +77,7 @@
         "source": "Je suis certifié HVE 3",
         "parametres": [],
         "traductions": [{
-                "traduction": "Je m'engage pour la biodiversité, plus de haies pour nos oiseaux.",
+                "traduction": "Je m'engage pour la biodiversité, plus de haies pour nos oiseaux. 🐤🦉",
                 "hashtags": [  "Biodiversite", "FierDeMonMetier" ]
             },
 			{
