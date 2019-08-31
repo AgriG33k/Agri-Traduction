@@ -43,10 +43,10 @@ function nettoyerDiv(div) {
 function creerElementParametres(divParametres, divTraduction, item, param) {
     // Création d'un div
     var div = document.createElement("div");
-    div.setAttribute('class', 'row');
+    div.setAttribute('class', 'col-6');
     // Création de l'élement
     var input = document.createElement("input");
-    input.setAttribute('class', 'form-control bidon');
+    input.setAttribute('class', 'form-control');
     // Affectation des paramètres
     input.setAttribute('type', param.type);
     input.setAttribute('name', param.cle);
