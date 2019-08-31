@@ -122,6 +122,30 @@ function obtenirTraduction(item, valeurs, traduction) {
 function creerElementsTraduit(parent, msg) {
     // Création de l'élement
     const row = document.createElement("div");
-    row.innerHTML = msg;
+    row.setAttribute("class", "card")
+    row.innerHTML = tempateTraduction(msg);
     parent.appendChild(row);
+
+    $('a.share').click(  function(e){ ouvrirNetwork(e);  });
+}
+
+//$('a.share').click(function(e){
+function ouvrirNetwork(e) {
+    console.log(e);
+    e.preventDefault();
+    var $link   = $(e.target);
+    var href    = $link.attr('href');
+    var network = $link.attr('data-network');
+
+    var networks = {
+        facebook : { width : 600, height : 300 },
+        twitter  : { width : 600, height : 254 }
+    };
+
+    var popup = function(network){
+        var options = 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,';
+        window.open(href, '', options+'height='+networks[network].height+',width='+networks[network].width);
+    }
+
+    popup(network);
 }
