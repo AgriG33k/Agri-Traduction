@@ -108,7 +108,8 @@ function obtenirTraduction(item, valeurs, traduction) {
             formula = formula.replace(param.cle, valeurs[param.cle]);
         });
         const res = eval(formula);
-        text = text.replace('[RES]', res);
+
+        text = text.replace('[RES]', new Intl.NumberFormat('fr-FR', { style: 'decimal', currency: 'EUR' }).format(res));
     }
     
     return text;
