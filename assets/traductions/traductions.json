@@ -1,52 +1,96 @@
 [
     {
         "code": "1",
-        "source": "J'ai produit [X] tonnes de blé sur mon exploitation",
+        "source": "Je cultive [X] hectares de blé tendre",
         "parametres": [
             {
                 "cle": "X",
                 "libelle": "Quantité",
                 "type": "number",
-                "defaut": "20"
-            },
-            {
-                "cle": "Y",
-                "libelle": "Nombre",
-                "type": "number",
-                "defaut": "5"
+                "defaut": "1"
             }
         ],
         "traductions": [{
-                "traduction": "J'ai produit <b>[RES] baguettes</b>",
-                "formula": "X + Y"
+                "traduction": "Je produis <b>[RES] baguettes</b>🥖 par an. #AgriTraduction #CeuxQuiFontLePain #FierDeMonMetier",
+                "formula": "X * 25000"
             },
             {
-                "traduction": "J'ai nourri [RES] personnes",
-                "formula": "X * Y"
+                "traduction": "Je nourris <b>[RES] personnes</b>",
+                "formula": "X * 6000"
             }
         ]
     },
     {
         "code": "2",
-        "source": "Je suis certififié en HEV3",
+        "source": "Je moissonne mon blé",
         "parametres": [],
         "traductions": [{
-                "traduction": "J'ai sauvegardé la planète"
+                "traduction": "La moisson commence, baguettes en cours de récolte ! #AgriTraduction #CeuxQuiFontLePain #Moisson #FierDeMonMetier"
+            },
+			{
+                "traduction": "La moisson commence, c'est l'occasion de venir découvrir notre métier. #AgriTraduction #CeuxQuiFontLePain #Moisson #FierDeMonMetier"
+            },
+						{
+                "traduction": "La moisson commence, un p'tit tour en moissonneuse-batteuse ça vous dit? #AgriTraduction #CeuxQuiFontLePain #Moisson #FierDeMonMetier"
             }
         ]
     },
     {
         "code": "3",
-        "source": "J'ai planté X arbres",
-        "parametres": [{
-            "cle": "X",
-            "libelle": "Quantité",
-            "type": "number",
-            "defaut": "1"
-        }],
+        "source": "Je cultive [X] hectares de tournesol",
+        "parametres": [
+            {
+                "cle": "X",
+                "libelle": "Quantité",
+                "type": "number",
+                "defaut": "1"
+            }
+        ],
         "traductions": [{
-                "traduction": "J'ai collecté [RES] tonnes de CO2",
-                "formula": "X * 1000"
+                "traduction": "Profitez de [RES] ☀️ dans vos champs! 😎 #AgriTraduction #Tournesol #FierDeMonMetier",
+                "formula": "X * 65000"
+            }
+        ]
+    },
+	{
+        "code": "4",
+        "source": "Je vais vendanger",
+        "parametres": [],
+        "traductions": [{
+                "traduction": "Les vendanges commencent, 🚜 quelques bouchons sur la route avant de les avoir sur la table 🍷🍷 #AgriTraduction #Vendanges #FierDeMonMetier"
+            }
+        ]
+    },
+	{
+        "code": "5",
+        "source": "Je suis certifié HVE 3",
+        "parametres": [],
+        "traductions": [{
+                "traduction": "Je m'engage pour la biodiversité, plus de haies pour nos oiseaux. #AgriTraduction #Biodiversite #FierDeMonMetier"
+            },
+			{
+                "traduction": "Fleurs gastronomiques, 🐝 prochain champ à gauche. #AgriTraduction #Biodiversite #Abeilles #FierDeMonMetier"
+            },
+			{
+                "traduction": "Gîte 4* pour 🐸 au sein de mon exploitation. #AgriTraduction #Biodiversite #Mare #FierDeMonMetier"
+            }
+        ]
+    },
+	{
+        "code": "6",
+        "source": "Je cultive des plantes mellifères",
+        "parametres": [],
+        "traductions": [{
+                "traduction": "Fleurs gastronomiques, 🐝 prochain champ à gauche. #AgriTraduction #Biodiversite #Abeilles #FierDeMonMetier"
+            }
+        ]
+    },
+	{
+        "code": "7",
+        "source": "J'ai créé une mare",
+        "parametres": [],
+        "traductions": [{
+                "traduction": "Gîte 4* pour 🐸 au sein de mon exploitation. #AgriTraduction #Biodiversite #Mare #FierDeMonMetier"
             }
         ]
     }
