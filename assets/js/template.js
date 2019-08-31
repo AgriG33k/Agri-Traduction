@@ -15,9 +15,6 @@ function tempateTraduction(hashtags, text) {
         hashtagShared += element + ",";
     });
 
-
-    // console.log(sharedText);
-
     return `
         <div class="card-item" >
             <div class="card-body">
