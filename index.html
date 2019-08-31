@@ -26,36 +26,37 @@
     <section>
         <div class="fond container">
                 <h1>Faites vous comprendre par vos voisins</h1>
-            <div class="row">
-                <div class="col-6">
-                    <h3>Agriculteur</h3>
-                    <div class="form-group">
-                        <select class="js-example-basic-single js-states form-control" id="id_label_single" data-select2-id="id_label_single" tabindex="-1" aria-hidden="true">
-                            <optgroup label="Alaskan/Hawaiian Time Zone" data-select2-id="161">
-                                <option value="AK" data-select2-id="160">Alaska</option>
-                                <option value="HI" data-select2-id="162">Hawaii</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <h3>Citoyens</h3>
-                        <div class="form-group">
-                            <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+                    <div class="row">
+                        <div class="col-md">
+                            <h3>Agriculteur</h3>
+                            <div class="form-group">
+                                <select class="form-control" id="source" data-select2-id="source" tabindex="-1" aria-hidden="true"> </select>
+                            </div>
                         </div>
-                </div>
-            </div>
+                        <div class="col-md" id="parametres" >
+                        </div>
+                        <div class="col-md"  >
+                            <h3>Citoyens</h3>
+                            <div id="traduction">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
         </div>
     </section>
     <footer></footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
-    <script>
-    $('.js-example-basic-single').select2({
-        placeholder: ''
-    });
-    </script>
+
+    <script src="assets/js/traduction.js" ></script>
+    <script src="assets/js/script.js" ></script>
+
+
   </body>
 </html>

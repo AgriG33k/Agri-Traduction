@@ -1,0 +1,53 @@
+[
+    {
+        "code": "1",
+        "source": "J'ai produit [X] tonnes de blé sur mon exploitation",
+        "parametres": [
+            {
+                "cle": "X",
+                "libelle": "Quantité",
+                "type": "number",
+                "defaut": "20"
+            },
+            {
+                "cle": "Y",
+                "libelle": "Nombre",
+                "type": "number",
+                "defaut": "5"
+            }
+        ],
+        "traductions": [{
+                "traduction": "J'ai produit <b>[RES] baguettes</b>",
+                "formula": "X + Y"
+            },
+            {
+                "traduction": "J'ai nourri [RES] personnes",
+                "formula": "X * Y"
+            }
+        ]
+    },
+    {
+        "code": "2",
+        "source": "Je suis certififié en HEV3",
+        "parametres": [],
+        "traductions": [{
+                "traduction": "J'ai produit sauvegardé la planète"
+            }
+        ]
+    },
+    {
+        "code": "3",
+        "source": "J'ai planté X arbres",
+        "parametres": [{
+            "cle": "X",
+            "libelle": "Quantité",
+            "type": "number",
+            "defaut": "1"
+        }],
+        "traductions": [{
+                "traduction": "J'ai collecté [RES] tonnes de CO2",
+                "formula": "X * 1000"
+            }
+        ]
+    }
+]
