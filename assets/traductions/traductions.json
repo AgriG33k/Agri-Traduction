@@ -13,7 +13,7 @@
         "traductions": [{
                 "traduction": "Je produis <b>[RES] baguettes</b>🥖 par an.",
                 "formula": "X * 25000",
-                "hashtags": [  "AgriTraduction", "CeuxQuiFontLePain", "FierDeMonMetier" ]
+                "hashtags": [ "CeuxQuiFontLePain", "FierDeMonMetier" ]
             },
             {
                 "traduction": "Je nourris <b>[RES] personnes</b>",
@@ -28,7 +28,7 @@
         "parametres": [],
         "traductions": [{
                 "traduction": "La moisson commence, baguettes en cours de récolte !",
-                "hashtags": [  "AgriTraduction", "CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
+                "hashtags": ["CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
             },
 			{
                 "traduction": "La moisson commence, c'est l'occasion de venir découvrir notre métier.",
