@@ -75,7 +75,7 @@ function gererTraductions(divTraduction, item) {
     // Pour chaque item de traduction création d'un noeud
     item.traductions.forEach(traduction => {
         const msg = obtenirTraduction(item, valeurs, traduction);
-        creerElementsTraduit(divTraduction, msg);
+        creerElementsTraduit(divTraduction, traduction.hashtags, msg);
     });
 }
 
@@ -92,7 +92,6 @@ function recupererValeurs(item) {
         valeurs[param.cle] = val;
     });
     // Retour
-    console.log(valeurs);
     return valeurs;
 }
 
@@ -108,7 +107,6 @@ function obtenirTraduction(item, valeurs, traduction) {
         item.parametres.forEach(param => {
             formula = formula.replace(param.cle, valeurs[param.cle]);
         });
-        console.log(formula);
         const res = eval(formula);
         text = text.replace('[RES]', res);
     }
@@ -119,11 +117,11 @@ function obtenirTraduction(item, valeurs, traduction) {
 /**
  * Créer un élément enfants
  */
-function creerElementsTraduit(parent, msg) {
+function creerElementsTraduit(parent, hashtags, msg) {
     // Création de l'élement
     const row = document.createElement("div");
-    row.setAttribute("class", "card")
-    row.innerHTML = tempateTraduction(msg);
+    row.setAttribute("class", "card");
+    row.innerHTML = tempateTraduction(hashtags, msg);
     parent.appendChild(row);
 
     $('a.share').click(  function(e){ ouvrirNetwork(e);  });
@@ -131,7 +129,6 @@ function creerElementsTraduit(parent, msg) {
 
 //$('a.share').click(function(e){
 function ouvrirNetwork(e) {
-    console.log(e.target);
     e.preventDefault();
     var $link   = $(e.target).parent();
     var href    = $link.attr('href');

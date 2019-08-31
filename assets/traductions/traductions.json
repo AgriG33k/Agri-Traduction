@@ -11,12 +11,14 @@
             }
         ],
         "traductions": [{
-                "traduction": "Je produis <b>[RES] baguettes</b>🥖 par an. #AgriTraduction #CeuxQuiFontLePain #FierDeMonMetier",
-                "formula": "X * 25000"
+                "traduction": "Je produis <b>[RES] baguettes</b>🥖 par an.",
+                "formula": "X * 25000",
+                "hashtags": [  "AgriTraduction", "CeuxQuiFontLePain", "FierDeMonMetier" ]
             },
             {
                 "traduction": "Je nourris <b>[RES] personnes</b>",
-                "formula": "X * 6000"
+                "formula": "X * 6000",
+                "hashtags": []
             }
         ]
     },
@@ -25,13 +27,16 @@
         "source": "Je moissonne mon blé",
         "parametres": [],
         "traductions": [{
-                "traduction": "La moisson commence, baguettes en cours de récolte ! #AgriTraduction #CeuxQuiFontLePain #Moisson #FierDeMonMetier"
+                "traduction": "La moisson commence, baguettes en cours de récolte !",
+                "hashtags": [  "AgriTraduction", "CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
             },
 			{
-                "traduction": "La moisson commence, c'est l'occasion de venir découvrir notre métier. #AgriTraduction #CeuxQuiFontLePain #Moisson #FierDeMonMetier"
+                "traduction": "La moisson commence, c'est l'occasion de venir découvrir notre métier.",
+                "hashtags": [  "CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
             },
 						{
-                "traduction": "La moisson commence, un p'tit tour en moissonneuse-batteuse ça vous dit? #AgriTraduction #CeuxQuiFontLePain #Moisson #FierDeMonMetier"
+                "traduction": "La moisson commence, un p'tit tour en moissonneuse-batteuse ça vous dit? ",
+                "hashtags": [  "CeuxQuiFontLePain", "Moisson", "FierDeMonMetier" ]
             }
         ]
     },
@@ -47,8 +52,9 @@
             }
         ],
         "traductions": [{
-                "traduction": "Profitez de [RES] ☀️ dans vos champs! 😎 #AgriTraduction #Tournesol #FierDeMonMetier",
-                "formula": "X * 65000"
+                "traduction": "Profitez de [RES] ☀️ dans vos champs! 😎 ",
+                "formula": "X * 65000",
+                "hashtags": [ "Tournesol", "FierDeMonMetier" ]
             }
         ]
     },
@@ -57,7 +63,8 @@
         "source": "Je vais vendanger",
         "parametres": [],
         "traductions": [{
-                "traduction": "Les vendanges commencent, 🚜 quelques bouchons sur la route avant de les avoir sur la table 🍷🍷 #AgriTraduction #Vendanges #FierDeMonMetier"
+                "traduction": "Les vendanges commencent, 🚜 quelques bouchons sur la route avant de les avoir sur la table 🍷🍷",
+                "hashtags": [  "Vendanges", "FierDeMonMetier" ]
             }
         ]
     },
@@ -66,13 +73,16 @@
         "source": "Je suis certifié HVE 3",
         "parametres": [],
         "traductions": [{
-                "traduction": "Je m'engage pour la biodiversité, plus de haies pour nos oiseaux. #AgriTraduction #Biodiversite #FierDeMonMetier"
+                "traduction": "Je m'engage pour la biodiversité, plus de haies pour nos oiseaux.",
+                "hashtags": [  "Biodiversite", "FierDeMonMetier" ]
             },
 			{
-                "traduction": "Fleurs gastronomiques, 🐝 prochain champ à gauche. #AgriTraduction #Biodiversite #Abeilles #FierDeMonMetier"
+                "traduction": "Fleurs gastronomiques, 🐝 prochain champ à gauche.",
+                "hashtags": [  "Biodiversite", "Abeilles", "FierDeMonMetier" ]
             },
 			{
-                "traduction": "Gîte 4* pour 🐸 au sein de mon exploitation. #AgriTraduction #Biodiversite #Mare #FierDeMonMetier"
+                "traduction": "Gîte 4* pour 🐸 au sein de mon exploitation.",
+                "hashtags": [  "Biodiversite", "Mare", "FierDeMonMetier" ]
             }
         ]
     },
@@ -81,7 +91,8 @@
         "source": "Je cultive des plantes mellifères",
         "parametres": [],
         "traductions": [{
-                "traduction": "Fleurs gastronomiques, 🐝 prochain champ à gauche. #AgriTraduction #Biodiversite #Abeilles #FierDeMonMetier"
+                "traduction": "Fleurs gastronomiques, 🐝 prochain champ à gauche.",
+                "hashtags": [  "Biodiversite", "Abeilles", "FierDeMonMetier" ]
             }
         ]
     },
@@ -90,7 +101,8 @@
         "source": "J'ai créé une mare",
         "parametres": [],
         "traductions": [{
-                "traduction": "Gîte 4* pour 🐸 au sein de mon exploitation. #AgriTraduction #Biodiversite #Mare #FierDeMonMetier"
+                "traduction": "Gîte 4* pour 🐸 au sein de mon exploitation.",
+                "hashtags": [  "Biodiversite", "Mare", "FierDeMonMetier" ]
             }
         ]
     }
