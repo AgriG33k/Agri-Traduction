@@ -29,6 +29,7 @@
                         <h3>Agriculteur</h3>
                         <div class="form-group">
                             <select class="form-control" id="source" data-select2-id="source" tabindex="-1" aria-hidden="true"> </select>
+							<input type="button" id="mic" value="Mic" />
                         </div>
                     </div>
                     <div class="col-lg col-md sm-block">
@@ -57,6 +58,19 @@
     <script src="./assets/externals/popper.min.js"></script>
     <script src="./assets/externals/bootstrap.min.js"></script>
     <script src="./assets/externals/select2.min.js"></script>
+	
+		
+	<script>
+		var recognition = new SpeechRecognition();
+		recognition.lang = 'fr-FR';
+		recognition.interimResults = false;
+		recognition.maxAlternatives = 1;
+		
+		$('#mic').onclick = function() {
+			recognition.start();
+			console.log('Ready to receive a color command.');
+		}		
+	</script>
 	
     <script src="assets/js/template.js" ></script>
     <script src="assets/js/traduction.js" ></script>
