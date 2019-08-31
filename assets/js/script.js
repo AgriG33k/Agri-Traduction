@@ -9,7 +9,11 @@ $(document).ready(function() {
         sources = json;
         // Construction du tableau pour le select 2
         data = sources.map(function(item) { return { "id":item.code, "text":item.source }});
-        $('select').select2({ data: data });
+        $('select').select2({ 
+			data: data,
+			placeholder: 'Select an option'
+			
+		});
     });
 
     
