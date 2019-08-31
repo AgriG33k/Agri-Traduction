@@ -9,14 +9,14 @@ $(document).ready(function() {
         sources = json;
         // Construction du tableau pour le select 2
         data = sources.map(function(item) { return { "id":item.code, "text":item.source }});
+        data.unshift({ "id": "-1", "text": "" });
         $('select').select2({ 
-			data: data,
-			placeholder: 'Select an option'
-			
-		});
+            data: data,
+            allowClear: true,
+            placeholder:"Select an Title"
+         });
     });
-
-    
+  
     
 });
 
