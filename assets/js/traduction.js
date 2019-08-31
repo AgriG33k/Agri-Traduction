@@ -131,9 +131,9 @@ function creerElementsTraduit(parent, msg) {
 
 //$('a.share').click(function(e){
 function ouvrirNetwork(e) {
-    console.log(e);
+    console.log(e.target);
     e.preventDefault();
-    var $link   = $(e.target);
+    var $link   = $(e.target).parent();
     var href    = $link.attr('href');
     var network = $link.attr('data-network');
 
