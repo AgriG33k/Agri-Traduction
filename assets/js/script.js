@@ -9,12 +9,13 @@ $(document).ready(function() {
         sources = json;
         // Construction du tableau pour le select 2
         data = sources.map(function(item) { return { "id":item.code, "text":item.source }});
-        data.unshift({ "id": "-1", "text": "" });
-        $('select').select2({ 
+        // data.unshift({ "id": "-1", "text": "" });
+        $('#source').select2({ 
             data: data,
             allowClear: true,
             placeholder:"Select an Title"
          });
+		 $('#source').val(null).trigger('change');
     });
   
     
@@ -24,6 +25,19 @@ $(document).ready(function() {
 
 // Gestion d'un évènement sur la sélection
 $('#source').on('select2:select', function (e) {
+    console.log("TATAT");
+    // Récupération de la valeur
+    var data = e.params.data;
+    // Récupération de l'item sélectionné
+    const selections = sources.filter(source => source.code == data.id);
+    // Récupération
+    if(selections.length > 0) {
+        const item = selections[0];
+        selectionItem(item, "#parametres", "#traduction");
+    }
+});
+// Gestion d'un évènement sur la sélection
+$('#source').on('select2:change', function (e) {
     console.log("TATAT");
     // Récupération de la valeur
     var data = e.params.data;

@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-lg col-md sm-block">
                         <img src="./assets/img/forward.png" class="hidden-xs">
-                        <div class="row justify-content-center" id="parametres">
+							<div class="row justify-content-center" id="parametres">
                         </div>
                     </div>
                     <div class="col-lg col-md-12 col-sm-12"  >
@@ -61,15 +61,40 @@
 	
 		
 	<script>
-		var recognition = new SpeechRecognition();
-		recognition.lang = 'fr-FR';
-		recognition.interimResults = false;
-		recognition.maxAlternatives = 1;
+		var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+		var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+		var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 		
-		$('#mic').onclick = function() {
+		var grammar = '#JSGF V1.0; grammar phrase;';
+		var recognition = new SpeechRecognition();		
+		var speechRecognitionList = new SpeechGrammarList();
+		
+			  speechRecognitionList.addFromString(grammar, 1);
+			  recognition.grammars = speechRecognitionList;
+			  recognition.lang = 'fr-FR';
+			  recognition.interimResults = false;
+			  recognition.maxAlternatives = 1;
+
+			var testBtn = document.querySelector('#mic');
+			  
+		testBtn.addEventListener('click', function() {
+			console.log("Let's go !");
 			recognition.start();
 			console.log('Ready to receive a color command.');
-		}		
+		});
+
+		recognition.onresult = function(event) {
+			console.log('ok');
+			var speechResult = event.results[0][0].transcript.toLowerCase();
+			console.log('Speech received: ' + speechResult + '.');
+			$('#source').val('2'); // Select the option with a value of '1'
+			$('#source').trigger('change'); // Notify any JS components that the value changed
+			console.log('Confidence: ' + event.results[0][0].confidence);
+		}
+		
+		recognition.onspeechend = function() {
+			recognition.stop();
+		}
 	</script>
 	
     <script src="assets/js/template.js" ></script>
