@@ -84,20 +84,25 @@ body > section > div > div > div:nth-child(2) > img  {
     color: #878787;
 }
 
-#sticky-footer {
+#footer {
     flex-shrink: none;
     bottom: 0;
     left: 0;
     right: 0;
     position: absolute;
+    clear: both;
   }
 
   
-  #sticky-footer > div > small > a, #sticky-footer > div > small > a:hover{
+  #footer > div > small > a, #footer > div > small > a:hover{
       color: rgba(255,255,255,.5)!important;
   }
-@media (max-width: 992px) { 
+
+  body > section > div > div > div.col-md.col-sm.d-none.d-sm-block.d-md-block > img{
+    margin-left: 268px;
+  }
+/* @media (max-width: 992px) { 
     .sm-block{
         display: none;
     }
- }
+ } */
