@@ -22,7 +22,7 @@
     left: 0;
 }
 
-section h1, body > section > div > div > div:nth-child(1) > h3{
+section h1, body > section h3{
     text-align: center;
 }
 
@@ -70,4 +70,12 @@ body > section > div > div{
 
 body > section > div > div > div:nth-child(2) > img  {
     margin-left: 120px;
+}
+
+.card{
+    border: 1px solid Black;
+    border-radius: 8px 8px 8px 8px;
+    padding: 10px;
+    background: white;
+    color: #878787;
 }
