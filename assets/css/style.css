@@ -26,7 +26,7 @@ section{
     margin-bottom: 75px;
 }
 
-section h2, body > section h3{
+body > section > div > h1, body > section h3{
     text-align: center;
 }
 
