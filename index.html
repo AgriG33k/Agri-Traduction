@@ -62,43 +62,6 @@
     <script src="./assets/externals/select2.min.js"></script>
     
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=X8yM5JWp"></script>
-
-    <script>
-            var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-            var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
-            var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
-            
-            var grammar = '#JSGF V1.0; grammar phrase;';
-            var recognition = new SpeechRecognition();		
-            var speechRecognitionList = new SpeechGrammarList();
-            
-                  speechRecognitionList.addFromString(grammar, 1);
-                  recognition.grammars = speechRecognitionList;
-                  recognition.lang = 'fr-FR';
-                  recognition.interimResults = false;
-                  recognition.maxAlternatives = 1;
-                var testBtn = document.querySelector('#mic');
-                  
-            testBtn.addEventListener('click', function() {
-                console.log("Let's go !");
-                recognition.start();
-                console.log('Ready to receive a color command.');
-            });
-            recognition.onresult = function(event) {
-                console.log('ok');
-                var speechResult = event.results[0][0].transcript.toLowerCase();
-                console.log('Speech received: ' + speechResult + '.');
-                $('#source').val('2'); // Select the option with a value of '1'
-                $('#source').trigger('change'); // Notify any JS components that the value changed
-                console.log('Confidence: ' + event.results[0][0].confidence);
-            }
-            
-            recognition.onspeechend = function() {
-                recognition.stop();
-            }
-    </script>
-
-    
     
 
     <script src="assets/js/template.js" ></script>
