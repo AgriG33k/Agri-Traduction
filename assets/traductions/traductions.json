@@ -1,7 +1,7 @@
 [
     {
         "code": "1",
-        "source": "Je cultive [X] hectares de blé tendre",
+        "source": "Je cultive des hectares de blé tendre",
         "parametres": [
             {
                 "cle": "X",
@@ -16,7 +16,7 @@
                 "hashtags": ["CeuxQuiFontLePain", "FierDeMonMetier" ]
             },
             {
-                "traduction": "Je nourris <b>[RES] personnes</b> 🍴👪",
+                "traduction": "Je nourris <b>[RES] personnes</b> 🍴👪 par an.",
                 "formula": "X * 6000",
                 "hashtags": ["CeuxQuiFontLePain", "FierDeMonMetier" ]
             }
@@ -46,7 +46,7 @@
     },
     {
         "code": "3",
-        "source": "Je cultive [X] hectares de tournesol",
+        "source": "Je cultive des hectares de tournesol",
         "parametres": [
             {
                 "cle": "X",
