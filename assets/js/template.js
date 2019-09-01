@@ -40,9 +40,8 @@ function tempateTraduction(hashtags, text) {
                     <!-- <a href="https://twitter.com/share?url=${ url }&text=${ sharedText }&hashtags=${hashtagShared}" class="share twitter" data-network="twitter"><img width='66px' src='./assets/img/twitter.png'></a> -->
                     <a href="https://twitter.com/intent/tweet?text=${ sharedText }&hashtags=${hashtagShared}" class="share twitter" data-network="twitter"><img width='66px' src='./assets/img/twitter.png'></a>
                     <a href="https://instagram.com" class="share twitter" data-network="twitter"><img src='./assets/img/instagram.png'></a>
-                    <img onclick='parler(" ${ speakText } "); ' src='./assets/img/instagram.png' />
                   </p>
-                  <img type="button" onclick='parler(" ${ text } "); ' src='./assets/img/voix1.png' width="30px" />
+                  <img type="button" onclick='parler(" ${ speakText } "); ' src='./assets/img/voix1.png' width="30px" />
                 </footer>
             </div> <!-- / card-body -->
         </div> <!-- / Card-item -->
