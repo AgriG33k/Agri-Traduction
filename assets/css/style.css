@@ -105,6 +105,18 @@ body > section > div > div > div:nth-child(2) > img  {
   body > section > div > div > div.col-md.col-sm.d-none.d-sm-block.d-md-block > img{
     margin-left: 40%;
   }
+
+  .icon-ecoute{
+    margin-top: -22px;
+  }
+
+  #traduction > div > div > div > footer > p > a:nth-child(3) > img{
+    margin-right: 22px;
+  }
+
+  #mic{
+    margin: -7px;
+  }
 /* @media (max-width: 992px) { 
     .sm-block{
         display: none;
