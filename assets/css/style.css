@@ -117,8 +117,25 @@ body > section > div > div > div:nth-child(2) > img  {
   #mic{
     margin: -7px;
   }
-/* @media (max-width: 992px) { 
-    .sm-block{
+
+  body > header > nav > span > img{
+      width: 700px;
+  }
+
+  .hidden{
+    display: none;
+}
+
+@media (max-width: 992px) { 
+    body > header > nav > span > img{
+        width: 300px;
+    }
+
+    body > section > div > div > div.col-lg.col-md.d-none.d-sm-none.d-lg-block.d-xl-block > img:nth-child(1){
         display: none;
     }
- } */
+
+    .hidden{
+        display: block;
+    }
+ }
