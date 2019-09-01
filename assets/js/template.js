@@ -3,10 +3,24 @@ function parler(msg) {
     responsiveVoice.speak(msg, "French Female");
 }
 
+/**
+ * Nettoye le code des balises HTML
+ * @param {*} html 
+ */
+function stripHtml(html){
+    // Création d'un élement div
+    var temporalDivElement = document.createElement("div");
+    // Affectation
+    temporalDivElement.innerHTML = html;
+    // Suppression
+    return temporalDivElement.textContent || temporalDivElement.innerText || "";
+}
+
 function tempateTraduction(hashtags, text) {
     // Calcul des variables
     const url = encodeURI('http://agri-traduction.fr');
     const sharedText = encodeURI(text);
+    const speakText = stripHtml(text);
     let hashtagText = "";
     let hashtagShared = "";
 
@@ -27,7 +41,7 @@ function tempateTraduction(hashtags, text) {
                     <a href="https://twitter.com/intent/tweet?text=${ sharedText }&hashtags=${hashtagShared}" class="share twitter" data-network="twitter"><img width='66px' src='./assets/img/twitter.png'></a>
                     <a href="https://instagram.com" class="share twitter" data-network="twitter"><img src='./assets/img/instagram.png'></a>
                   </p>
-                  <img type="button" onclick='parler(" ${ text } "); ' src='./assets/img/voix1.png' width="30px" />
+                  <img type="button" onclick='parler(" ${ speakText } "); ' src='./assets/img/voix1.png' width="30px" />
                 </footer>
             </div> <!-- / card-body -->
         </div> <!-- / Card-item -->
