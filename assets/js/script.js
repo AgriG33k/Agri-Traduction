@@ -1,4 +1,5 @@
 let sources = [];
+let data = [];
 
 // Transformation de la zone en select
 $(document).ready(function() {
