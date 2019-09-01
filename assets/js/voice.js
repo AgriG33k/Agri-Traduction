@@ -26,12 +26,19 @@ recognition.onresult = function (event) {
     console.log('Speech received: ' + speechResult + '.');
 
     // Recherche de la phrase dans la liste
-    const ids = sources.filter(item => item.source.toLowerCase() == speechResult );
-    console.log(ids);
+    const selections = sources.filter(item => item.source.toLowerCase() == speechResult );
+    console.log(selections);
 
-    if(ids.length > 0) {
-        $('#source').val(ids[0].code);
+    if(selections.length > 0) {
+        // Récupération
+        const item = selections[0];
+        // Changement du select 2
+        $('#source').val(item.code);
         $('#source').trigger('change');
+        // Sélection de l'item
+        selectionItem(item, "#parametres", "#traduction");
+        // Lecture du son
+        parler(item.traductions[0].traduction);
     }
     
 }
