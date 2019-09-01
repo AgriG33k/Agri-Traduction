@@ -63,6 +63,10 @@ recognition.onresult = function (event) {
     
 }
 
+recognition.onerror = function(event) {
+    console.log('Error occurred in recognition: ' + event.error);
+}
+
 // Fin de l'écoute
 recognition.onspeechend = function () {
     recognition.stop();
