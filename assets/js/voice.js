@@ -2,6 +2,7 @@
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+var synth = window.speechSynthesis;
 
 // Initialisation des éléments
 var grammar = '#JSGF V1.0; grammar phrase;';
@@ -13,11 +14,30 @@ recognition.lang = 'fr-FR';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
+function parler(msg) {
+    // responsiveVoice.speak(msg, "French Female");
+    var utterThis = new SpeechSynthesisUtterance(msg);
+    utterThis.onend = function (event) {
+        console.log('SpeechSynthesisUtterance.onend');
+    }
+    utterThis.onerror = function (event) {
+        console.error('SpeechSynthesisUtterance.onerror');
+    }
+    // utterThis.voice = "Google français";
+    utterThis.pitch = 1;
+    utterThis.rate = 1;
+    synth.speak(utterThis);
+}
+
 // Gestion du bouton
 var testBtn = document.querySelector('#mic');
 testBtn.addEventListener('click', function () {
-    recognition.start();
-    console.log('Ready to receive a color command.');
+    parler('Je vous écoute');
+    setTimeout(function() {
+        recognition.start();
+        console.log('Ready to receive a command.');
+      }, 500);
+
 });
 
 // Gestion de l'écoute
@@ -41,6 +61,10 @@ recognition.onresult = function (event) {
         parler(item.traductions[0].traduction);
     }
     
+}
+
+recognition.onerror = function(event) {
+    console.log('Error occurred in recognition: ' + event.error);
 }
 
 // Fin de l'écoute

@@ -13,7 +13,13 @@ function stripHtml(html){
     // Affectation
     temporalDivElement.innerHTML = html;
     // Suppression
-    return temporalDivElement.textContent || temporalDivElement.innerText || "";
+    var res = temporalDivElement.textContent || temporalDivElement.innerText || "";
+    // Remplacement
+    console.log(res);
+    // res = res.replace("'", " ");
+    res = res.replace(/\'/g, " ");
+    console.log(res);
+    return res;
 }
 
 function tempateTraduction(hashtags, text) {
