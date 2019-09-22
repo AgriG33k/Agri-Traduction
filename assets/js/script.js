@@ -5,7 +5,7 @@ let data = [];
 $(document).ready(function() {
 
     // Chargement du fichier JSON
-    $.getJSON("./assets/traductions/traductions.json", function(json) {
+    $.getJSON("https://backend-agritraduction.lafamillebn.fr/api/messages", function(json) {
         // Affectation
         sources = json;
         // Construction du tableau pour le select 2
@@ -21,18 +21,15 @@ $(document).ready(function() {
     
 });
 
-
-
 // Gestion d'un évènement sur la sélection
 $('#source').on('select2:select', function (e) {
-    console.log("TATAT");
     // Récupération de la valeur
     var data = e.params.data;
     // Récupération de l'item sélectionné
     const selections = sources.filter(source => source.code == data.id);
     // Récupération
     if(selections.length > 0) {
-        const item = selections[0];
-        selectionItem(item, "#parametres", "#traduction");
+        const message = selections[0];
+        selectionItem(message, "#parametres", "#traduction");
     }
 });

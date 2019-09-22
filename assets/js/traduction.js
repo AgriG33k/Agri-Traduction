@@ -74,8 +74,10 @@ function gererTraductions(divTraduction, item) {
 
     // Pour chaque item de traduction création d'un noeud
     item.traductions.forEach(traduction => {
-        const msg = obtenirTraduction(item, valeurs, traduction);
-        creerElementsTraduit(divTraduction, traduction.hashtags, msg);
+        // Récupération du texte traduit avec gestion des formules
+        const texteTraduit = obtenirTraduction(item, valeurs, traduction);
+        // Création de l'élément DOM qui va être ajouté
+        creerElementsTraduit(divTraduction, traduction, texteTraduit);
     });
 }
 
@@ -97,38 +99,49 @@ function recupererValeurs(item) {
 
 /**
  * Retourne le message
+ * @param message le message d'orgine
+ * @param valeurs les valeurs saisies par l'utilisateur
+ * @param traduction la traduction qui doit être gérée
  */
-function obtenirTraduction(item, valeurs, traduction) {
+function obtenirTraduction(message, valeurs, traduction) {
 
+    // Récupération du texte qui sert de traduction et sera mis à jour si des formules sont associées
     let text = traduction.traduction;
     
-    if(traduction.formula) {
-        let formula = traduction.formula;
-        item.parametres.forEach(param => {
-            formula = formula.replace(param.cle, valeurs[param.cle]);
+    // Des formules ?
+    if(traduction.formules) {
+        // Oui! 
+        traduction.formules.forEach(item => {
+            // Stockage de la formule
+            let formula = item.formule;
+            // Mise à jour en fonction des paramètres 
+            message.parametres.forEach(param => { formula = formula.replace(param.cle, valeurs[param.cle]); });
+            // Calcul
+            const res = eval(formula);
+            // Mise à jour du texte
+            text = text.replace('[' + item.code + ']', new Intl.NumberFormat('fr-FR', { style: 'decimal', currency: 'EUR' }).format(res));
         });
-        const res = eval(formula);
-
-        text = text.replace('[RES]', new Intl.NumberFormat('fr-FR', { style: 'decimal', currency: 'EUR' }).format(res));
     }
     
     return text;
 }
 
 /**
- * Créer un élément enfants
+ * Créer un élément enfant présentant le message "traduit"
+ * @param parent l'élément dans lequel le nouveau div va être ajouté
+ * @param traduction l'objet traduction à l'origine du message
+ * @param texteTraduit le texte traduit
  */
-function creerElementsTraduit(parent, hashtags, msg) {
+function creerElementsTraduit(parent, traduction, texteTraduit) {
     // Création de l'élement
     const row = document.createElement("div");
     row.setAttribute("class", "card");
-    row.innerHTML = tempateTraduction(hashtags, msg);
+    row.innerHTML = templateTraduction(traduction, texteTraduit);
     parent.appendChild(row);
 
     $('a.share').click(  function(e){ ouvrirNetwork(e);  });
 }
 
-//$('a.share').click(function(e){
 function ouvrirNetwork(e) {
     e.preventDefault();
     var $link   = $(e.target).parent();
