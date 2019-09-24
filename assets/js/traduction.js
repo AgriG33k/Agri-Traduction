@@ -142,6 +142,10 @@ function creerElementsTraduit(parent, traduction, texteTraduit) {
     $('a.share').click(  function(e){ ouvrirNetwork(e);  });
 }
 
+/**
+ * Gere un click sur les boutons de partage et ouvre une popup
+ * @param {*} e 
+ */
 function ouvrirNetwork(e) {
     e.preventDefault();
     var $link   = $(e.target).parent();

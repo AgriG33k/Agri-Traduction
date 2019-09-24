@@ -67,7 +67,40 @@
               <small>Made with <i class="fas fa-heart"></i> while <a href="https://hacktaferme.fr/" target="_blank">Hacktaferme 2019</a> @ <a href="https://goo.gl/maps/RDAoiAdu6R9R2G8V9" target="_blank">43.61 0.99</a> </small>
         </div>
     </footer>
+
+    <div id="facebookModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Partage sur FaceBook</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p> Le texte que vous avez sélectionné va être copié dans le presse papier.  (comme avec CTRL + C ou Edition > Copier.) </p>
+              <input type="text" id="facebookSharedText" value="" style="width:100%;"  /> 
+              <p> </p>A votre clic sur <button type="button" class="btn btn-primary facebookmodal" >Partager</button>, une fenêtre va apparaître vous permettant de coller le texte pour le partager sur FaceBook. Pour cela, il vous suffit de faire un clic droit > copier dans la zone de texte puis Envoyer</p>
+              <p>
+                  <b> Important </b> : Avant d'accéder à la page de partage, Facebook vous demandera peut-être de vous identifier. Si c'est le cas et que le texte est perdu, n'hésitez pas à revenir ici pour recommence l'opération.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+              
+              <input type="text" id="facebookHashtag" value="" style="display: none;" /> 
+              <button type="button" class="btn btn-primary facebookmodal"  >Partager</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+
+
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    
     <script src="./assets/externals/jquery-3.4.1.min.js"></script>
     <script src="./assets/externals/popper.min.js"></script>
     <script src="./assets/externals/bootstrap.min.js"></script>
@@ -75,7 +108,10 @@
     
     <script src="./assets/externals/responsivevoice.js"></script>
     
+    <script async defer src="https://connect.facebook.net/fr_FR/sdk.js"></script>
 
+    
+    <script src="assets/js/config.js"></script>
     <script src="assets/js/template.js" ></script>
     <script src="assets/js/traduction.js" ></script>
     <script src="assets/js/script.js" ></script>

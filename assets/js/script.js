@@ -3,6 +3,8 @@ let data = [];
 
 // Transformation de la zone en select
 $(document).ready(function() {
+    
+    
 
     // Chargement du fichier JSON
     $.getJSON("https://backend-agritraduction.lafamillebn.fr/api/messages", function(json) {
@@ -17,9 +19,19 @@ $(document).ready(function() {
             placeholder:"Select an Title"
          });
     });
-  
-    
+      
 });
+
+window.fbAsyncInit = function() {
+    // 
+    FB.init({
+        appId            : FACEBOOK_APP_ID,
+        autoLogAppEvents : true,
+        xfbml            : false,
+        version          : 'v4.0',
+        status           : true
+      });
+};
 
 // Gestion d'un évènement sur la sélection
 $('#source').on('select2:select', function (e) {
