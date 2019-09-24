@@ -7,19 +7,12 @@
 }
 .fond{
     padding: 20px;
-}
-.fond:before {
     background: #fafafa;
     border-bottom: 1px solid rgba(0,0,0,0.12);
-    content: '';
     display: block;
-    height: 250px;
-    overflow: hidden;
+    height: auto;
     width: 100%;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
+
 }
 
 
@@ -56,14 +49,11 @@ body > section > div > h1, body > section h3{
     color: #878787;
 }
 
-#footer {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    clear: both;
-  }
-
+.footer {
+    padding: 55px 0 71px 0;
+    display: inline-block;
+    width: 100%;
+}
 
   #footer > div > small > a,
   #footer > div > small > a:hover{
