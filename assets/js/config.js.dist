@@ -1,0 +1,2 @@
+const FACEBOOK_APP_ID = '[ID_DE_L_APPLICATION_FB]';
+const API_URL = 'https://backend-agritraduction.lafamillebn.fr/api/messages';

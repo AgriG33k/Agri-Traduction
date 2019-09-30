@@ -7,7 +7,7 @@ $(document).ready(function() {
     
 
     // Chargement du fichier JSON
-    $.getJSON("https://backend-agritraduction.lafamillebn.fr/api/messages", function(json) {
+    $.getJSON(API_URL, function(json) {
         // Affectation
         sources = json;
         // Construction du tableau pour le select 2
