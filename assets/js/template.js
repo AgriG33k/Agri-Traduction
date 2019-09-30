@@ -41,11 +41,12 @@ function templateTraduction(traduction, text) {
     return `
         <div class="card-item" >
             <div class="card-body">
-                <p class="card-text"> ${ text }</p>
-                <p class="card-text"> ${ hashtagText } </p>
+                <p class="card-text"> ${ text }</p> `
+                + templateTraductionImage(traduction) +
+                ` <p class="card-text"> ${ hashtagText } </p>
                 <footer>
                   <p>Partager sur  : ` 
-                  + templateTraductionReseau(traduction, url, text, sharedText, hashtagShared, hashTagFacebook)
+                  + templateTraductionReseau2(traduction, url, text, sharedText, hashtagShared, hashTagFacebook)
                   + `</p>
                   <img type="button" onclick='parler(" ${ speakText } "); ' src='./assets/img/voix1.png' width="30px" />
                 </footer>
@@ -55,18 +56,29 @@ function templateTraduction(traduction, text) {
 }
 
 /**
+ * Ajout une image si image il y a :)
+ */
+function templateTraductionImage(traduction) {
+
+    if(traduction.image) {
+        return `<img src="${traduction.image}" class="img-trad" />`
+    } else { return ''; }
+
+} // /templateTraduction
+
+/**
  * Gere ce qui est affiché pour un message
  * @param {*} traduction 
  * @param {*} sharedText Le texte qui partagé séparé des hastags
  * @param {*} hashtagShared
  */
-function templateTraductionReseau(traduction, url, text, sharedText, hashtagShared, hashTagFacebook) {
+function templateTraductionReseau2(traduction, url, text, sharedText, hashtagShared, hashTagFacebook) {
     let retour = "";
     // Boucle sur les réseaux
     traduction.reseaux.forEach(reseau => {
         switch (reseau) {
             case "facebook":
-                retour += `<a href="#" onclick='showModalFacebook("${ text }", "${hashTagFacebook}"); return false;' class="facebook" data-network="facebook"> <img width='32px' src='./assets/img/facebook.png'></a>`            
+                retour += `<a href="#" onclick='showModalFacebook("${ text }", "${hashTagFacebook}", "${traduction.image}"); return false;' class="facebook" data-network="facebook"> <img width='32px' src='./assets/img/facebook.png'></a>`            
                 break;
             case "twitter":
                 retour += `<a href="https://twitter.com/intent/tweet?text=${ sharedText }&hashtags=${hashtagShared}" class="share twitter" data-network="twitter"><img width='66px' src='./assets/img/twitter.png'></a>`
@@ -85,20 +97,25 @@ function templateTraductionReseau(traduction, url, text, sharedText, hashtagShar
  * Gestion de Facebook
  * @param {*} url 
  */
-function showModalFacebook(text, hashTagFacebook) {
+function showModalFacebook(text, hashTagFacebook, image) {
     // https://www.facebook.com/sharer/sharer.php?u=${ url }&t=${ sharedText }
     // Mise à jour du champs qui peut-être nécessaire en fonction des navigateurs
     document.querySelector("#facebookSharedText").value = text;
     // document.querySelector("#facebookHashtag").value = hashTagFacebook;
 
+    // Préparation des données pour FB
+    let dataFB = {
+        method: 'share',
+        // href: image,
+        // quote: 'Le message qu on pourrait passer mais href est obligatoire !',
+        hashtag: hashTagFacebook
+        };
+    // Si il y a une image, elle est ajoutée
+    if(image) { dataFB.href = image; }
+
     // Création de la fonction qui va appeler FB.Ui
-    var popup = function() {
-        FB.ui({
-            method: 'share',
-            //  href: 'https://agri-traduction.fr',
-            // quote: 'Le message qu on pourrait passer mais href est obligatoire !',
-            hashtag: hashTagFacebook
-            }, function(response){});
+    const popup = function() {
+        FB.ui(dataFB, function(response){});
     } // /popup
     
     // Ouverture de la modal
