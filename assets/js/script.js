@@ -4,10 +4,8 @@ let data = [];
 // Transformation de la zone en select
 $(document).ready(function() {
     
-    
-
     // Chargement du fichier JSON
-    $.getJSON(API_URL, function(json) {
+    $.getJSON(API_URL_MESSAGES, function(json) {
         // Affectation
         sources = json;
         // Construction du tableau pour le select 2

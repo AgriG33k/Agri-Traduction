@@ -1,5 +1,6 @@
 docker-compose.yml
 deploy.sh
+docker.sh
 config.js
 
 ### macOS ###

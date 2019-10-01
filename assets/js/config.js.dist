@@ -1,2 +1,4 @@
 const FACEBOOK_APP_ID = '[ID_DE_L_APPLICATION_FB]';
-const API_URL = 'https://backend-agritraduction.lafamillebn.fr/api/messages';
+const API_URL = 'https://backend-agritraduction.lafamillebn.fr/api'
+const API_URL_MESSAGES = `${API_URL}/messages`
+const API_URL_PROPOSITION = `${API_URL}/proposition`
