@@ -26,6 +26,17 @@ $(document).ready(function() {
     var valider = document.querySelector('button.propositionModal');
     valider.addEventListener('click', function (e) {
         // Stop !
+        e.preventDefault();
+
+        // Un petit test pour le fun :)
+        if(document.querySelector("#honeypot").value.length > 0) {
+            // Pas normal, le champ n'est pas visible. Un robot ou un petit malin.
+            console.log("TSSSS");
+            $('#propositionModal').modal('hide');
+            return;
+        }
+
+        // Récupération des champs
         const inputAuteur = document.querySelector('#auteur');
         const inputEmail = document.getElementById('email');
         const inputTexte = document.getElementById('texte');
@@ -33,7 +44,6 @@ $(document).ready(function() {
         const divAlert = document.getElementById("propositionModalAlert");
         const form = document.querySelector('#propositionForm');
             
-        e.preventDefault();
         
         // Validation du formulaire (s'occupe du message d'erreur)
         if(formulairePropositionValide(divAlert, inputAuteur, inputEmail, inputTexte)) {

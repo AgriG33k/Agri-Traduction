@@ -122,6 +122,10 @@
             <div class="alert alert-danger" id="propositionModalAlert" style="display:none" > Tsss : Mal rempli ! </div>
             <p> Vous ne trouvez pas votre bonheur dans notre liste ? N'hésitez pas à nous proposer un message avec ou sans traduction. Notre équipe de bilingue se fera un plaisir de traduire ! </p>
             <form id="propositionForm">
+              <!-- honeypot : le champ n'est pas visible donc s'il est rempli c'est pas normal -->
+              <div style="display: none" >
+                  <input type="text" name="honeypot" id="honeypot" />
+              </div>
               <div class="row" >
                 <div class="col" >
                   <div class="form-group" >
@@ -154,6 +158,7 @@
                         </div>
                   </div>
               </div> <!-- Troisième ligne -->
+              
             </form>
           </div>
           <div class="modal-footer">
