@@ -85,7 +85,7 @@ function templateTraductionImage(traduction) {
  * @param {*} sharedText Le texte qui partagé séparé des hastags
  * @param {*} hashtagShared
  */
-function templateTraductionReseau2(traduction, url, text, sharedText, hashtagShared, hashTagFacebook) {
+function templateTraductionReseau(traduction, url, text, sharedText, hashtagShared, hashTagFacebook) {
     let retour = "";
 
     // L'image peut est vide
