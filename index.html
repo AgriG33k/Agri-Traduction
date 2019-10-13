@@ -35,6 +35,9 @@
                     <div class="form-group">
                         <select class="form-control" id="source" data-select2-id="source" tabindex="-1" aria-hidden="true"> </select>
                     </div>
+                    <div class="form-group text-center center">
+                      <button class="btn btn-secondary" id="proposer"> Proposer </button>
+                    </div>
                 </div>
                 <div class="col offset-md-2 d-sm-block d-md-block d-lg-block d-xl-block d-none">
                     <img src="./assets/img/forward.ico">
@@ -53,29 +56,134 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
+        </div>
+      </div>
+    </div>
+    <!-- / modal Proposition -->
+  
+  </section>
 <!-- Footer -->
 <footer class="page-footer font-small bg-dark">
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">
         <small>Made with <i class="fas fa-heart"></i> while <a href="https://hacktaferme.fr/" target="_blank">Hacktaferme 2019</a> @ <a href="https://goo.gl/maps/RDAoiAdu6R9R2G8V9" target="_blank">43.61 0.99</a> </small>
-
     </div>
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
 
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <script src="./assets/externals/jquery-3.4.1.min.js"></script>
-    <script src="./assets/externals/popper.min.js"></script>
-    <script src="./assets/externals/bootstrap.min.js"></script>
-    <script src="./assets/externals/select2.min.js"></script>
-    <script src="./assets/externals/responsivevoice.js"></script>
-    <script src="assets/js/template.js" ></script>
-    <script src="assets/js/traduction.js" ></script>
-    <script src="assets/js/script.js" ></script>
-    <script src="assets/js/voice.js"></script>
-  </body>
+  <!-- Modal pour Facebook -->
+  <div id="facebookModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Partage sur FaceBook</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p> Le texte que vous avez sélectionné va être copié dans le presse papier. (comme avec CTRL + C ou Edition >
+            Copier.) </p>
+          <input type="text" id="facebookSharedText" value="" style="width:100%;" />
+          <p> </p>A votre clic sur <button type="button" class="btn btn-primary facebookmodal">Partager</button>, une
+          fenêtre va apparaître vous permettant de coller le texte pour le partager sur FaceBook. Pour cela, il vous
+          suffit de faire un clic droit > copier dans la zone de texte puis Envoyer</p>
+          <p>
+            <b> Important </b> : Avant d'accéder à la page de partage, Facebook vous demandera peut-être de vous
+            identifier. Si c'est le cas et que le texte est perdu, n'hésitez pas à revenir ici pour recommence
+            l'opération.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+
+          <input type="text" id="facebookHashtag" value="" style="display: none;" />
+          <button type="button" class="btn btn-primary facebookmodal">Partager</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / modal Facebook -->
+
+    <!-- Modal pour Proposition -->
+    <div id="propositionModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Proposer un message ! </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-danger" id="propositionModalAlert" style="display:none" > Tsss : Mal rempli ! </div>
+            <p> Vous ne trouvez pas votre bonheur dans notre liste ? N'hésitez pas à nous proposer un message avec ou sans traduction. Notre équipe de bilingue se fera un plaisir de traduire ! </p>
+            <form id="propositionForm">
+              <!-- honeypot : le champ n'est pas visible donc s'il est rempli c'est pas normal -->
+              <div style="display: none" >
+                  <input type="text" name="honeypot" id="honeypot" />
+              </div>
+              <div class="row" >
+                <div class="col" >
+                  <div class="form-group" >
+                    <label for="auteur" > <strong> * Auteur : </strong> </label>
+                    <input type="text" id="auteur" name="auteur" class="form-control" required />
+                    <small class="form-text text-muted" > Votre nom, surnom, organisation ... </small>
+                  </div>
+                  <div class="form-group" >
+                      <label for="email" > Email : </label>
+                      <input type="email" id="email" name="email" class="form-control" />
+                      <small class="form-text text-muted" > Non obligatoire. Un email pour revenir vers vous. Conserver le temps de traitement de votre proposition (donc potentiellement quelques semaines :o) </small>
+                    </div>
+                  </div>
+              </div> <!-- Première ligne -->
+              <div class="row" >
+                  <div class="col" >
+                      <div class="form-group" >
+                          <label for="message" > <strong> * Texte : </strong> </label>
+                          <input type="text" id="texte" name="texte" required class="form-control" />
+                          <small class="form-text text-muted" > Le message qui vous voulez passer ! </small>
+                        </div>
+                  </div>
+              </div> <!-- Deuxième ligne -->
+              <div class="row" >
+                  <div class="col" >
+                      <div class="form-group" >
+                          <label for="auteur" >  Traduction(s) : </label>
+                          <textarea row="4" id="traductions" name="traductions" class="form-control" > </textarea>
+                          <small class="form-text text-muted" > Si vous avez déjà des idées. </small>
+                        </div>
+                  </div>
+              </div> <!-- Troisième ligne -->
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button type="button" class="btn btn-primary propositionModal">Proposer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / modal Proposition -->
+
+
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+
+  <script src="./assets/externals/jquery-3.4.1.min.js"></script>
+  <script src="./assets/externals/popper.min.js"></script>
+  <script src="./assets/externals/bootstrap.min.js"></script>
+  <script src="./assets/externals/select2.min.js"></script>
+  <script src="./assets/externals/responsivevoice.js"></script>
+  <script async defer src="https://connect.facebook.net/fr_FR/sdk.js"></script>
+  <script src="assets/js/proposition.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/template.js"></script>
+  <script src="assets/js/traduction.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/voice.js"></script>
+
+</body>
+
 </html>

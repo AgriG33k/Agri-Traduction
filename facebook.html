@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1> FaceBook Test !</h1>
+
+        <h3>Liens</h3>
+        <a href="https://developers.facebook.com/docs/javascript" target="_blank" > SDK Javascript </a> / <a href="https://developers.facebook.com/docs/javascript/reference/FB.ui" target="_blank" rel="noopener noreferrer"> FB.Ui</a>
+
+        <h3> Utilisation de la méthode Share </h3>
+        <div>
+            <ul>
+                <li> <a href="https://developers.facebook.com/docs/sharing/reference/share-dialog" target="_blank"> Doc de la boite de dialogue Shared </a>
+                <li>
+                    Actions : <button onclick="share()" > FB.Share </button>
+                </li>
+            </ul>
+            <p>
+                Il est possible de passer un texte mais uniquement via une citation qui ne sera présente que si il y a un lien.
+            </p>
+        </div>
+
+        <ul>
+            <li><a href="https://www.facebook.com/help/222269837798440" target="_blank" > Comment autoriser mon application sous FaceBook </a></li>
+            <li><a href="https://developers.facebook.com/docs/javascript/reference/FB.ui/" target="_blank"> FB - Dialogs </a></li>
+            <li><a href="https://developers.facebook.com/docs/facebook-login/permissions#reference-user_posts" target="_blank"> FB - Liste des autorisations</a>  </li>
+            <li><a href="https://github.com/Wizcorp/phonegap-facebook-plugin/" target="_blank" > FB Cordova -  </a> </li>
+            <li><a href="https://developers.facebook.com/apps/762800577485984/app-review/permissions/" target="_blank" > FB APP Autorisation </a> </li>
+            <li><a href="https://developers.facebook.com/docs/javascript/reference/FB.api#examples" target="_blank" > FB Javascript SDK </a> </li>
+            <li><a href="https://wordpress.org/support/topic/requires-either-publish_to_groups-permission-and-app-being-installed-in-the-grou/" target="_blank" > Doc </a></li> 
+        </ul>
+
+        <h3> Utilisation de la méthode Read API (résultat dans la console) </h3>
+        <div>
+            Actions : <button onclick="CallAPI()" > FB.api('/') </button>
+        </div>
+
+        <script>
+                window.fbAsyncInit = function() {
+                  FB.init({
+                    appId            : '762800577485984',
+                    autoLogAppEvents : true,
+                    xfbml            : false,
+                    version          : 'v4.0',
+                    status           : true
+                  });
+                };
+                console.log('LALALA');
+
+
+                function share() {
+                    FB.ui({
+                        method: 'share',
+                        href: 'https://agri-traduction.fr',
+                        quote: 'Le message qu on pourrait passer mais href est obligatoire !',
+                        hashtag: '#UnSeulHashTag'
+                      }, function(response){});
+                }
+
+                function CallAPI() {
+
+                    FB.login(function(response) {
+                        console.log(response);
+                        if (response.authResponse) {
+                            const authResponse = response.authResponse;
+                            console.log('Welcome!  Fetching your information.... ');
+
+                         /*
+                         FB.api('/me', function(response) {
+                            console.log(response);
+                            console.log('Good to see you, ' + response.name + '.');
+                            
+                        });
+                        */
+                        var body = 'Reading JS SDK documentation';
+                        console.log(authResponse);
+                         FB.api('/me/feed', 'post', { message: body }, function(response) {
+                            console.log("LALALA");
+                            console.error(response.error.message);
+                            console.log("-- LALALA --");
+                            if (!response || response.error) {
+                                alert('JE PASSE LA ! Error occured');
+                            } else {
+                                alert('Post ID: ' + response.id);
+                            }
+                            // FB.logout();
+                        });
+                        } else {
+                         console.log('User cancelled login or did not fully authorize.');
+                        }
+                    }, { scope: 'public_profile, publish_to_groups' }); //, {scope: 'public_profile,email,manage_pages,publish_pages'});
+
+                }
+
+              </script>
+              <script async defer src="https://connect.facebook.net/fr_FR/sdk.js"></script>
+</body>
+</html>

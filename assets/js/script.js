@@ -3,9 +3,9 @@ let data = [];
 
 // Transformation de la zone en select
 $(document).ready(function() {
-
+    
     // Chargement du fichier JSON
-    $.getJSON("./assets/traductions/traductions.json", function(json) {
+    $.getJSON(API_URL_MESSAGES, function(json) {
         // Affectation
         sources = json;
         // Construction du tableau pour le select 2
@@ -17,22 +17,29 @@ $(document).ready(function() {
             placeholder:"Select an Title"
          });
     });
-  
-    
+      
 });
 
-
+window.fbAsyncInit = function() {
+    // 
+    FB.init({
+        appId            : FACEBOOK_APP_ID,
+        autoLogAppEvents : true,
+        xfbml            : false,
+        version          : 'v4.0',
+        status           : true
+      });
+};
 
 // Gestion d'un évènement sur la sélection
 $('#source').on('select2:select', function (e) {
-    console.log("TATAT");
     // Récupération de la valeur
     var data = e.params.data;
     // Récupération de l'item sélectionné
     const selections = sources.filter(source => source.code == data.id);
     // Récupération
     if(selections.length > 0) {
-        const item = selections[0];
-        selectionItem(item, "#parametres", "#traduction");
+        const message = selections[0];
+        selectionItem(message, "#parametres", "#traduction");
     }
 });
