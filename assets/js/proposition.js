@@ -26,7 +26,6 @@ $(document).ready(function() {
     var valider = document.querySelector('button.propositionModal');
     valider.addEventListener('click', function (e) {
         // Stop !
- Ajout d'un test "anti-robot"
         e.preventDefault();
 
         // Un petit test pour le fun :)
@@ -38,7 +37,6 @@ $(document).ready(function() {
         }
 
         // Récupération des champs
-//Ajout d'un test "anti-robot"
         const inputAuteur = document.querySelector('#auteur');
         const inputEmail = document.getElementById('email');
         const inputTexte = document.getElementById('texte');
@@ -46,10 +44,6 @@ $(document).ready(function() {
         const divAlert = document.getElementById("propositionModalAlert");
         const form = document.querySelector('#propositionForm');
             
-
-        e.preventDefault();
-//Gestion des propositions
-//Ajout d'un test "anti-robot"
         
         // Validation du formulaire (s'occupe du message d'erreur)
         if(formulairePropositionValide(divAlert, inputAuteur, inputEmail, inputTexte)) {
